@@ -158,6 +158,7 @@ db.serialize(() => {
         ['Adaptör', '549', 'image/product/format-webp-7.webp', 3.5],
         ['Peçete', '299', 'image/product/format-webp-8.webp', 3.5],
       ];
+      
       products.forEach(p => stmt.run(...p));
       stmt.finalize(() => {
         console.log('recommendations içine 5 ürün eklendi ✅');
