@@ -1,0 +1,81 @@
+.product-card {
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding-bottom: 15px; 
+  min-height: 370px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 1rem;
+  margin-right: 2px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 5px; /* üstten boşluk eklendi */
+}
+
+
+.star {
+  font-size: 1.4rem;
+  margin-right: 3px;
+}
+
+.text-warning {
+  color: gold !important;
+}
+
+.text-muted {
+  color: #ccc !important;
+}
+
+.rating i {
+  font-size: 1.2rem;
+}
+
+
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-prev,
+.slick-next {
+  background: #eee;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  font-size: 20px;
+}

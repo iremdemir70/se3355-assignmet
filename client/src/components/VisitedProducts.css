@@ -1,0 +1,18 @@
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 1.4rem;
+  margin-right: 3px;
+}
+
+.text-warning {
+  color: gold !important;
+}
+
+.text-muted {
+  color: #ccc !important;
+}

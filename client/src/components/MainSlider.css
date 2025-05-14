@@ -1,0 +1,19 @@
+
+.carousel-caption {
+  background: #0000004b;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#mainSlider {
+  height: 100%;
+  min-height: 400px; 
+}
+
+
+.slider-img {
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #fff;
+}
