@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db');
 
-// 📌 Quick Links
+// Quick Links
 router.get('/quick-links', (req, res) => {
   db.all('SELECT * FROM quick_links', (err, rows) => {
     if (err) {
@@ -13,7 +13,7 @@ router.get('/quick-links', (req, res) => {
   });
 });
 
-// 📌 Slider Items
+// Slider Items
 router.get('/slider', (req, res) => {
   db.all('SELECT * FROM slider_items', (err, rows) => {
     if (err) {
@@ -24,7 +24,7 @@ router.get('/slider', (req, res) => {
   });
 });
 
-// 📌 Elektronik Ürünler
+// Electronic Deals
 router.get('/elektronik', (req, res) => {
   db.all('SELECT * FROM elektronik_items', (err, rows) => {
     if (err) {
@@ -35,7 +35,7 @@ router.get('/elektronik', (req, res) => {
   });
 });
 
-// 📌 Sana Özel Öneriler
+// Recommendations
 router.get('/recommendations', (req, res) => {
   db.all('SELECT * FROM recommendations', (err, rows) => {
     if (err) {

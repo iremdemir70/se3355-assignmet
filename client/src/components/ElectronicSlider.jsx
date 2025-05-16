@@ -34,7 +34,6 @@ const renderStars = (rating) => {
 
 
   return (
-    <div className="col-md-4">
       <div className="bg-light rounded p-2 h-100 d-flex flex-column justify-content-between">
         <h5 className="text-center mb-3">Elektronik Fırsatlar</h5>
         <div id="electronicSlider" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -65,7 +64,6 @@ const renderStars = (rating) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

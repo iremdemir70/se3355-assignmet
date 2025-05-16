@@ -16,16 +16,16 @@ db.serialize(() => {
     )
   `, (err) => {
     if (err) {
-      console.error('quick_links tablosu oluşturulamadı ❌', err.message);
+      console.error('quick_links tablosu oluşturulamadı', err.message);
     } else {
-      console.log('quick_links tablosu hazır ✅');
+      console.log('quick_links tablosu oluşturuldu ');
     }
   });
 });
 
 db.serialize(() => {
   db.all('SELECT COUNT(*) as count FROM quick_links', (err, rows) => {
-    if (err) return console.error('Sorgu hatası ❌', err.message);
+    if (err) return console.error('Sorgu hatası', err.message);
 
     const count = rows[0].count;
     if (count === 0) {
@@ -47,10 +47,10 @@ db.serialize(() => {
       });
 
       stmt.finalize(() => {
-        console.log('8 kampanya quick_links tablosuna eklendi ✅');
+        console.log('8 kampanya quick_links tablosuna eklendi ');
       });
     } else {
-      console.log('quick_links tablosunda zaten veri var, ekleme yapılmadı 🟡');
+      console.log('quick_links tablosunda zaten veri var, ekleme yapılmadı ');
     }
   });
 });
@@ -65,8 +65,8 @@ db.serialize(() => {
       image TEXT NOT NULL
     )
   `, (err) => {
-    if (err) console.error('slider_items oluşturulamadı ❌', err.message);
-    else console.log('slider_items tablosu hazır ✅');
+    if (err) console.error('slider_items oluşturulamadı ', err.message);
+    else console.log('slider_items tablosu oluşturuldu ✅');
   });
 
   db.all('SELECT COUNT(*) as count FROM slider_items', (err, rows) => {
@@ -87,7 +87,7 @@ db.serialize(() => {
       ];
       sliderData.forEach(([title, image]) => stmt.run(title, image));
       stmt.finalize(() => {
-        console.log('slider_items içine özel görseller eklendi ✅');
+        console.log('slider_items içine veri eklendi');
       });
     }
   });
@@ -107,8 +107,8 @@ db.serialize(() => {
       rating REAL
     )
   `, (err) => {
-    if (err) console.error('elektronik_items oluşturulamadı ❌', err.message);
-    else console.log('elektronik_items tablosu hazır ✅');
+    if (err) console.error('elektronik_items oluşturulamadı ', err.message);
+    else console.log('elektronik_items tablosu oluşturuldu');
   });
 
   db.all('SELECT COUNT(*) as count FROM elektronik_items', (err, rows) => {
@@ -122,7 +122,7 @@ db.serialize(() => {
       ];
       products.forEach(p => stmt.run(...p));
       stmt.finalize(() => {
-        console.log('elektronik_items içine 3 ürün eklendi ✅');
+        console.log('elektronik_items içine 3 ürün eklendi ');
       });
     }
   });
@@ -140,8 +140,8 @@ db.serialize(() => {
       rating REAL
     )
   `, (err) => {
-    if (err) console.error('recommendations oluşturulamadı ❌', err.message);
-    else console.log('recommendations tablosu hazır ✅');
+    if (err) console.error('recommendations oluşturulamadı ', err.message);
+    else console.log('recommendations tablosu oluşturuldu');
   });
 
   db.all('SELECT COUNT(*) as count FROM recommendations', (err, rows) => {
@@ -161,7 +161,7 @@ db.serialize(() => {
       
       products.forEach(p => stmt.run(...p));
       stmt.finalize(() => {
-        console.log('recommendations içine 5 ürün eklendi ✅');
+        console.log('recommendations içine 5 ürün eklendi ');
       });
     }
   });

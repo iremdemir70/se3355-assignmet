@@ -25,13 +25,17 @@ function App() {
               <QuickLinks />
               <div className="container mt-4">
                 <div className="row align-items-stretch">
-                  <div className="col-md-8 mb-3 mb-md-0">
+                  <div className="col-md-8 mb-3 mb-md-0 h-100">
                     <MainSlider />
                   </div>
-                  <ElectronicSlider />
+                  <div className="col-md-4 h-100">
+                    <ElectronicSlider />
+                  </div>
+                </div>
+                <div className="mt-4 recommendations">
+                  <Recommendations />
                 </div>
               </div>
-              <Recommendations />
               <VisitedProducts />
             </>
           }
@@ -41,5 +45,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
