@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -17,59 +18,56 @@ const Navbar = () => {
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
 
-            {/* Menü 1 */}
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="/elektronik"
+                to="/elektronik"
                 id="elektronikMenu"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Elektronik
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="elektronikMenu">
-                <li><a className="dropdown-item" href="/bilgisayar-tablet">Bilgisayar / Tablet</a></li>
-                <li><a className="dropdown-item" href="/yazici-projeksiyon">Yazıcılar / Projeksiyon</a></li>
-                <li><a className="dropdown-item" href="/telefon-aksesuarlari">Telefon Aksesuarları</a></li>
+                <li><Link className="dropdown-item" to="/bilgisayar-tablet">Bilgisayar / Tablet</Link></li>
+                <li><Link className="dropdown-item" to="/yazici-projeksiyon">Yazıcılar / Projeksiyon</Link></li>
+                <li><Link className="dropdown-item" to="/telefon-aksesuarlari">Telefon Aksesuarları</Link></li>
               </ul>
             </li>
 
-            {/* Menü 2 */}
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="/ev-yasam"
+                to="/ev-yasam"
                 id="evYasamMenu"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Ev, Yaşam, Kırtasiye
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="evYasamMenu">
-                <li><a className="dropdown-item" href="/ofis">Ofis</a></li>
-                <li><a className="dropdown-item" href="/dekorasyon">Dekorasyon</a></li>
-                <li><a className="dropdown-item" href="/kirtasiye">Kırtasiye</a></li>
+                <li><Link className="dropdown-item" to="/ofis">Ofis</Link></li>
+                <li><Link className="dropdown-item" to="/dekorasyon">Dekorasyon</Link></li>
+                <li><Link className="dropdown-item" to="/kirtasiye">Kırtasiye</Link></li>
               </ul>
             </li>
 
-            {/* Statik Menüler */}
             <li className="nav-item">
-              <a className="nav-link" href="/oto-bahce">Oto, Bahçe, Yapı Market</a>
+              <Link className="nav-link" to="/oto-bahce">Oto, Bahçe, Yapı Market</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/bebek">Anne & Bebek, Oyuncak</a>
+              <Link className="nav-link" to="/bebek">Anne & Bebek, Oyuncak</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/spor">Spor, Outdoor</a>
+              <Link className="nav-link" to="/spor">Spor, Outdoor</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/kozmetik">Kozmetik, Kişisel Bakım</a>
+              <Link className="nav-link" to="/kozmetik">Kozmetik, Kişisel Bakım</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/supermarket">Süpermarket, Petshop</a>
+              <Link className="nav-link" to="/supermarket">Süpermarket, Petshop</Link>
             </li>
           </ul>
         </div>
