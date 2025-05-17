@@ -1,10 +1,9 @@
-const sqlite3 = require('sqlite3').verbose();
+const Database = require('better-sqlite3');
 const path = require('path');
 
-const db = new sqlite3.Database(path.resolve(__dirname, 'data.sqlite'), (err) => {
-  if (err) return console.error('DB bağlantı hatası:', err.message);
-  console.log('SQLite bağlantısı başarılı ✔️');
-});
+const db = new Database(path.resolve(__dirname, 'data.sqlite'));
+console.log('SQLite bağlantısı başarılı (better-sqlite3) ✅');
+
 
 //  : quick_links
 db.serialize(() => {
