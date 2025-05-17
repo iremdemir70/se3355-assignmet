@@ -10,9 +10,12 @@ const Recommendations = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const baseURL =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5050'
+      : '';
   useEffect(() => {
-    axios.get('http://localhost:5050/api/recommendations')
+    axios.get(`${baseURL}/api/recommendations`)
       .then(res => setProducts(res.data))
       .catch(err => console.error('Recommendations error:', err));
   }, []);

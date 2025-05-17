@@ -4,9 +4,12 @@ import './MainSlider.css';
 
 const MainSlider = () => {
   const [slides, setSlides] = useState([]);
-
+  const baseURL =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5050'
+      : ''
 useEffect(() => {
-  axios.get('http://localhost:5050/api/slider')
+  axios.get(`${baseURL}/api/slider`)
     .then(res => setSlides(res.data))
     .catch(err => console.error('Slider error:', err));
 }, []);

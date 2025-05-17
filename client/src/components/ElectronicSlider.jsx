@@ -10,8 +10,13 @@ const ElectronicSlider = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+    const baseURL =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5050'
+      : ''
 useEffect(() => {
-  axios.get('http://localhost:5050/api/elektronik')
+  axios.get(`${baseURL}/api/elektronik`)
     .then(res => setProducts(res.data))
     .catch(err => console.error('Elektronik slider error:', err));
 }, []);
