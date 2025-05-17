@@ -3,12 +3,13 @@ const cors = require('cors');
 const app = express();
 const routes = require('./routes');
 
+// Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/api', routes); 
+app.use('/api', routes);
 
-//API PORT
-const PORT = 5050;
-app.listen(PORT, () => {
-  console.log(`Backend çalışıyor http://localhost:${PORT}`);
+const PORT = process.env.PORT || 5050;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(` Backend http://localhost:${PORT}`);
 });
