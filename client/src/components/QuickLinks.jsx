@@ -5,8 +5,13 @@ import './QuickLinks.css';
 const QuickLinks = () => {
   const [links, setLinks] = useState([]);
 
+  const baseURL =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:5050'
+      : '';
+
   useEffect(() => {
-    axios.get('http://localhost:5050/api/quick-links')
+    axios.get(`${baseURL}/api/quick-links`)
       .then(response => setLinks(response.data))
       .catch(error => console.error('Quick Links Error:', error));
   }, []);
