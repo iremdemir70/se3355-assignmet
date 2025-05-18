@@ -5,11 +5,11 @@ This is a full-stack e-commerce web application inspired by Hepsiburada. It cons
 
 ### Screenshots
 
-<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot4.png?raw=true" width="500"/>
-<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot3.png?raw=true" width="500"/>
-<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot5.png?raw=true" width="500"/>
-<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot2.png?raw=true" width="500"/>
-<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot1.png?raw=true" width="500"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot4.png?raw=true" width="700"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot3.png?raw=true" width="700"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot5.png?raw=true" width="250"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot2.png?raw=true" width="250"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot1.png?raw=true" width="250"/>
 
 
 ## Technologies Used
