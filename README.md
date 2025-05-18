@@ -3,13 +3,14 @@ This is a full-stack e-commerce web application inspired by Hepsiburada. It cons
 ⚠️ Note: Since both the backend and frontend are deployed together on Render, the first load may take 15–20 seconds due to cold starts. Please allow some time for the server to wake up.
 
 
-### Screenshot
+### Screenshots
 
-![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot4.png?raw=true)
-![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot3.png?raw=true)
-![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot5.png?raw=true)
-![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot2.png?raw=true)
-![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot1.png?raw=true)
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot4.png?raw=true" width="500"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot3.png?raw=true" width="500"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot5.png?raw=true" width="500"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot2.png?raw=true" width="500"/>
+<img src="https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot1.png?raw=true" width="500"/>
+
 
 ## Technologies Used
 
