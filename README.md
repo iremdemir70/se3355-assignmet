@@ -5,10 +5,10 @@ This is a full-stack e-commerce web application inspired by Hepsiburada. It cons
 
 ### Screenshot
 
-![App Preview](./screenshots/Screenshot4.png)
+![App Preview](https://github.com/iremdemir70/se3355-assignment/blob/main/client/screenshots/Screenshot4.png?raw=true)
 
 
-## Stack
+## Technologies Used
 
 - **Frontend:**
 - React.js
@@ -56,12 +56,14 @@ This is a full-stack e-commerce web application inspired by Hepsiburada. It cons
 
 
 ## API Endpoints
+```
 
 | GET        | `/api/quick-links`       | Fetch quick link banner data             |
 | GET        | `/api/slider`            | Retrieve main slider data                |
 | GET        | `/api/elektronik`        | Fetch electronic product listings        |
 | GET        | `/api/recommendations`   | Get personalized recommendation data     |
 
+```
 Each endpoint returns structured JSON data from the SQLite database.
 
 ---
