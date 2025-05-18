@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+This is a full-stack e-commerce web application inspired by Hepsiburada. It consists of a React.js frontend and an Express.js backend using SQLite as the database.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+⚠️ Note: Since both the backend and frontend are deployed together on Render, the first load may take 15–20 seconds due to cold starts. Please allow some time for the server to wake up.
 
-## Available Scripts
+### Screenshot
 
-In the project directory, you can run:
+![App Preview](./screenshots/Screenshot 2025-05-18 at 18.02.24.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+.
+├── client/                 # Frontend (React)
+│   ├── public/             # Images
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── redux/          # Redux store and slices
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── stylesheets
+│   └── package.json        # Frontend dependencies and scripts
+│
+├── server/                 # Backend (Express.js)
+│   ├── data.sqlite         # SQLite database file
+│   ├── db.js               # DB connection & seed data
+│   ├── index.js            # Main server entry point
+│   ├── routes.js           # API route definitions
+│   └── package.json        # Backend dependencies
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Technologies Used
 
-### `npm run build`
+Frontend:
+React.js
+React Router DOM
+Redux Toolkit
+Axios
+Bootstrap 5
+Slick Carousel
+FontAwesome
+Backend:
+Node.js + Express.js
+SQLite (via better-sqlite3)
+RESTful API architecture
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API Endpoints:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Method	Route	Description
+GET	    /api/quick-links	    Fetch quick link banner data
+GET	    /api/slider	            Retrieve main slider data
+GET	    /api/elektronik	        Fetch electronic product listings
+GET	    /api/recommendations	Get personalized recommendation data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each endpoint returns structured JSON data from the SQLite database.
 
-### `npm run eject`
+Backend Overview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+db.js: Initializes the database and inserts default data into tables (quick_links, slider_items, elektronik_items, recommendations) if they are empty.
+routes.js: Handles API logic and sends data to the frontend.
+index.js: Starts the Express server, serves the React app from client/build, and handles routing.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Starting the Server Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+cd server
+npm install
+node index.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Server runs by default on http://localhost:5050.
 
-## Learn More
+Frontend Overview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Main Components:
+Component:	        Functionality:
+Navbar	            Top navigation menu with category dropdowns
+MainSlider	        Displays homepage carousel with images
+QuickLinks	        Showcases promotional banners
+ElectronicSlider	Carousel for electronic product deals
+Recommendations	    Personalized product suggestions (Slick carousel)
+VisitedProducts	    Displays products visited by the user (from Redux)
+ProductPage	        Static product detail page based on URL parameter
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Redux Store:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+visitedProductsSlice: Manages the state of viewed products.
+Products visited are stored in global state and shown in VisitedProducts.
 
-### Analyzing the Bundle Size
+Running the Frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+cd client
+npm install
+npm start
 
-### Making a Progressive Web App
+App will run on http://localhost:3000 (proxying to backend at http://localhost:5050 during development).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Deployment Notes
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed on Render with a single backend handling both API and static frontend.
+React build files are served from Express (client/build).
+Cold starts on Render may cause a delay on first load (approx. 15–20s).

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 
 const Recommendations = () => {
+  const isMobile = window.innerWidth <= 576;
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -59,13 +60,27 @@ const Recommendations = () => {
     ],
   };
 
-  return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Sana Özel Öneriler</h2>
+ return (
+  <div className="wider-container recommendations">
+    <h2 className="text-center mb-4">Sana Özel Öneriler</h2>
+    {isMobile ? (
+      <div className="row g-3 justify-content-center">
+        {products.map((product) => (
+          <div className="col-6 d-flex justify-content-center" key={product.id} onClick={() => handleClick(product)}>
+            <div className="rec-product-card p-3">
+              <img src={product.image} alt={product.title} className="img-fluid mb-2" />
+              <h5>{product.title}</h5>
+              <div className="rating">{renderStars(product.rating || 0)}</div>
+              <div className="price">{product.price}₺</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
       <Slider {...settings}>
         {products.map(product => (
           <div key={product.id} onClick={() => handleClick(product)} style={{ padding: '0 10px', cursor: 'pointer' }}>
-            <div className="product-card p-3">
+            <div className="rec-product-card p-3 mx-auto">
               <img src={product.image} alt={product.title} className="img-fluid mb-2" />
               <h5>{product.title}</h5>
               <div className="rating">{renderStars(product.rating || 0)}</div>
@@ -74,8 +89,8 @@ const Recommendations = () => {
           </div>
         ))}
       </Slider>
-    </div>
-  );
-};
-
+    )}
+  </div>
+);
+}
 export default Recommendations;

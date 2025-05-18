@@ -18,7 +18,7 @@ const VisitedProducts = () => {
   };
 
   return (
-    <div className="container my-5">
+    <div className="container mt-3 mb-5">
       <h2 className="text-center mb-4">Gezdiğin Ürünler</h2>
 
       <div className="row g-4 justify-content-center">

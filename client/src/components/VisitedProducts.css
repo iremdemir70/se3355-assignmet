@@ -16,3 +16,32 @@
 .text-muted {
   color: #ccc !important;
 }
+
+.product-card {
+  width: 100%;
+  max-width: 260px;
+  min-height: 260px; 
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+  z-index: 2;
+}
+
+

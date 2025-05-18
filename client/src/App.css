@@ -3,10 +3,13 @@
   margin-top: 20px;
 }
 
-#mainSlider,
+#mainSlider {
+  height: auto;
+  min-height: auto;
+}
+
 #electronicSlider {
-  min-height: 400px;
-  height: 100%;
+  min-height: 300px;
 }
 
 

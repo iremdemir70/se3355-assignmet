@@ -7,13 +7,11 @@ const routes = require('./routes');
 app.use(cors());
 app.use(express.json());
 
-// API rotaları
+// API 
 app.use('/api', routes);
 
-// React build klasörü
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-// API dışındaki tüm yollar React'e gitsin
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });

@@ -39,7 +39,7 @@ const renderStars = (rating) => {
 
 
   return (
-      <div className="bg-light rounded p-2 h-100 d-flex flex-column justify-content-between">
+      <div className="electronic-gradient rounded p-2 h-100 d-flex flex-column justify-content-between">
         <h5 className="text-center mb-3">Elektronik Fırsatlar</h5>
         <div id="electronicSlider" className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div className="carousel-inner">
@@ -58,9 +58,9 @@ const renderStars = (rating) => {
                   onClick={() => handleClick({ ...product, source: 'electronic' })}
                   style={{ cursor: 'pointer' }}
                 >
-                <div className="product-card mx-auto p-3">
+                <div className="elec-product-card mx-auto p-3">
                   <img src={product.image} className="img-fluid mb-2" alt={product.title} />
-                  <h5>{product.title}</h5>
+                  <h5 className="text-black">{product.title}</h5>
                   <div className="rating">{renderStars(product.rating || 0)}</div>
                   <div className="price">{product.price}₺</div>
                 </div>

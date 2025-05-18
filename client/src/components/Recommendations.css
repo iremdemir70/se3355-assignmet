@@ -1,25 +1,28 @@
-.product-card {
+.recommendations {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.rec-product-card {
   width: 100%;
-  max-width: 270px;
-  margin: 0 auto;
+  max-width: 260px;
+  min-height: 260px; 
   background-color: #fff;
   text-align: center;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: visible;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.08);
-  padding: 15px;
-  height: auto;          
-  min-height: unset;   
-  padding-bottom: 15px;  
+  overflow: hidden;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.product-card img {
-  object-fit: contain; 
-  margin: 0 auto;
-  display: block;
+.rec-product-card img {
+   height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 
@@ -63,20 +66,48 @@
 
 
 .slick-slide {
-  padding: 0 10px;
+  padding: 0 15px;
+  overflow: visible;
 }
+
+
+.wider-container recommendations {
+  max-width: 100%; 
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 
 .slick-prev,
 .slick-next {
   background: #eee;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 55px;
+  height: 55px;
   z-index: 2;
 }
 
 .slick-prev:before,
 .slick-next:before {
   color: black;
-  font-size: 20px;
+  font-size: 35px;
+}
+
+.rec-product-card:hover {
+    transform: translateY(-8px);
+  z-index: 2;
+}
+
+@media (max-width: 576px) {
+  .rec-product-card {
+    min-height: 280px;
+  }
+
+  .rec-product-card img {
+    height: 140px;
+  }
+
+  .rec-product-card h5 {
+    height: 36px;
+  }
 }
