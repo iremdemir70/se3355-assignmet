@@ -7,7 +7,6 @@ This is a full-stack e-commerce web application inspired by Hepsiburada. It cons
 
 ![App Preview](https://github.com/iremdemir70/se3355-assignment/blob/main/client/screenshots/Screenshot4.png?raw=true)
 
-
 ## Technologies Used
 
 - **Frontend:**

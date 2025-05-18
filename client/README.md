@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+This is a full-stack e-commerce web application inspired by Hepsiburada. It consists of a React.js frontend and an Express.js backend using SQLite as the database.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+⚠️ Note: Since both the backend and frontend are deployed together on Render, the first load may take 15–20 seconds due to cold starts. Please allow some time for the server to wake up.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Screenshot
 
-### `npm start`
+![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot4.png?raw=true)
+![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot3.png?raw=true)
+![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot5.png?raw=true)
+![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot2.png?raw=true)
+![App Preview](https://github.com/iremdemir70/se3355-assignmet/blob/main/client/screenshots/Screenshot1.png?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend:**
+- React.js
+- React Router DOM
+- Redux Toolkit
+- Axios
+- Bootstrap 5
+- Slick Carousel
+- FontAwesome
+- **Backend:** 
+- Node.js + Express.js
+- SQLite (via better-sqlite3)
+- RESTful API architecture
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+.
+├── client/                 # Frontend (React)
+│   ├── public/             # Images
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── redux/          # Redux store and slices
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── stylesheets
+│   └── package.json        # Frontend dependencies and scripts
+│
+├── server/                 # Backend (Express.js)
+│   ├── data.sqlite         # SQLite database file
+│   ├── db.js               # DB connection & seed data
+│   ├── index.js            # Main server entry point
+│   ├── routes.js           # API route definitions
+│   └── package.json        # Backend dependencies
+```
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Campaigns:** Grid display of current campaigns.
+- **Slider:** Main slider for featured content.
+- **Electronics:** Carousel for electronic products.
+- **Recommendations:** Personalized product suggestions.
+- **Last Visited Products:** Tracks and displays recently viewed products using Redux and localStorage.
+- **Responsive Design:** Mobile-friendly layout.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Endpoints
+```
 
-### `npm run eject`
+| GET        | `/api/quick-links`       | Fetch quick link banner data             |
+| GET        | `/api/slider`            | Retrieve main slider data                |
+| GET        | `/api/elektronik`        | Fetch electronic product listings        |
+| GET        | `/api/recommendations`   | Get personalized recommendation data     |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+Each endpoint returns structured JSON data from the SQLite database.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **Backend Overview**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **`db.js`**: Initializes the database and inserts default data into tables (`quick_links`, `slider_items`, `elektronik_items`, `recommendations`) if they are empty.
+- **`routes.js`**: Handles API logic and sends data to the frontend.
+- **`index.js`**: Starts the Express server, serves the React app from `client/build`, and handles routing.
 
-## Learn More
+### **Starting the Server Locally**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+- cd server
+- npm install
+- node index.js
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Frontend Overview**
 
-### Code Splitting
+**Main Components:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Navbar: Top navigation menu with category dropdowns
+- MainSlider: Displays homepage carousel with images
+- QuickLinks: Showcases promotional banners
+- ElectronicSlider: Carousel for electronic product deals
+- Recommendations: Personalized product suggestions (Slick carousel)
+- VisitedProducts: Displays products visited by the user (from Redux)
+- ProductPage: Static product detail page based on URL parameter
 
-### Analyzing the Bundle Size
+**Redux Store:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- visitedProductsSlice: Manages the state of viewed products.
+- Products visited are stored in global state and shown in VisitedProducts.
 
-### Making a Progressive Web App
+### **Running the Frontend:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+- cd frontend
+- npm install
+- npm start
+   ```
+App will run on http://localhost:3000 (proxying to backend at http://localhost:5050 during development).
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Deployment Notes
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed on Render with a single backend handling both API and static frontend.
+React build files are served from Express (client/build).
+Cold starts on Render may cause a delay on first load (approx. 15–20s).
